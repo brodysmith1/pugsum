@@ -1,0 +1,71 @@
+extends ../_includes/layouts/default.pug 
+
+block content
+  #white
+  #black
+    #black-1
+    #black-2
+    
+  script(src='../assets/js/blm/blm.js')
+
+  append css
+    style
+      :sass
+        body, svg
+          margin: 0
+          height: 100vh
+          width: 100%
+          font-size: 4px
+          overflow: hidden
+
+        #white
+          width: 100vw
+          height: 100vh
+          position: relative
+          background: #f8e8ce
+          
+        #black
+          position: absolute
+          transition-duration: 3s
+          // animation: move 150s linear infinite
+          &-1, &-2
+            height: 100%
+            width: 100%
+            position: absolute
+            background: #22222f
+            animation: spin 3s linear infinite
+          &-1
+            border-radius: 49%
+            animation-delay: 375ms
+          &-2
+            border-radius: 47%
+          
+        @keyframes spin
+          0%
+            transform: rotate(0deg)
+          100% 
+            transform: rotate(360deg)
+
+          
+        @keyframes move
+          0%
+            top: 50vh
+            left: 53.9vw
+          17%
+            top: 48.7vh
+            left: 45.8vw
+          33%
+            top: 52.1vh
+            left: 53.3vw
+          50%
+            top: 46.6vh
+            left: 47.7vw
+          67%
+            top: 53.3vh
+            left: 51.6vw
+          83%
+            top: 45.8vh
+            left: 47.5vw
+          100%
+            top: 50vh
+            left: 53.9vw

@@ -16,14 +16,17 @@ html(lang='en-us' class='antialiased overflow-y-scroll')
 		link(rel="manifest" href="/manifest.json")
 		link(rel="apple-touch-icon" href="/apple-touch-icon.png")
 		link(rel="shortcut icon", href="/favicon.ico")
-		link(rel='stylesheet', href=assets["main.css"])
+		
+		block css
+			link(rel='stylesheet', href=assets["main.css"])
+		
 		if(project.production)
 			script(defer src=assets["sw.js"])
 
 	body
 		a(class="sr-only" href="#main") Skip to content
 		include ../partials/header.pug
-		div.flex.flex-col.min-h-screen
+		.flex.flex-col.min-h-screen
 			include ../partials/main.pug
 				block content
 

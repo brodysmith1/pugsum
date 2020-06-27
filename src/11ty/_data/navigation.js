@@ -9,4 +9,9 @@ module.exports = [
 		url: "/features",
 		title: "Features",
 	},
+	{
+		id: "blm",
+		url: "/blm",
+		title: "BLM",
+	},
 ];
